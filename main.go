@@ -3,9 +3,14 @@ package main
 import (
 	"fmt"
 )
+var ( firstname string  ="Lin"
+	lastname  string  ="Chaowei"
+	funcs     string  ="is a idiot"
+)
 func main() {
-	fmt.Printf("hello\n")
-	fmt.Printf("world")
+	fmt.Printf(firstname)
+	fmt.Println(lastname)
+	fmt.Println(funcs)
 
 
 }
