@@ -1,7 +1,9 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
+	serial"github.com/tarm/goserial"
+	"log"
 )
 
 func binaryseach(iArray[10] int64, key int64, n int64)  (iMid   int64) {
@@ -24,8 +26,22 @@ return -1
 
 
 func main() {
-	a:=[10] int64{1,2,3,4,5,6,7,8,9,10}
-   fmt.Println("the position is ",(binaryseach(a,4,10)+1))
 
+		c := &serial.Config{Name: "COM10", Baud: 115200}
+		s, err := serial.OpenPort(c)
+		if err != nil {
+			log.Fatal(err)
+		}
 
-}
+		n, err := s.Write([]byte("test"))
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		buf := make([]byte, 128)
+		n, err = s.Read(buf)
+		if err != nil {
+			log.Fatal(err)
+		}
+		log.Print("%q", buf[:n])
+	}

@@ -3,28 +3,28 @@
     <CLASSES>
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/golang.org" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/google.golang.org" />
-      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/mayapp2" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/andybalholm" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/sourcegraph.com" />
+      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/m.clowire" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/alecthomas" />
-      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/myapp" />
+      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/www.github.com" />
+      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/test1" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/gopkg.in" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/apache" />
-      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/hello" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/github.com" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/aarzilli" />
     </CLASSES>
     <SOURCES>
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/golang.org" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/google.golang.org" />
-      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/mayapp2" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/andybalholm" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/sourcegraph.com" />
+      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/m.clowire" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/alecthomas" />
-      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/myapp" />
+      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/www.github.com" />
+      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/test1" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/gopkg.in" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/apache" />
-      <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/hello" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/github.com" />
       <root url="file://$USER_HOME$/Documents/SDK/GOlang/gopath/src/aarzilli" />
     </SOURCES>
