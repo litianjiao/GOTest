@@ -5,7 +5,7 @@ import (
 	serial"github.com/tarm/goserial"
 	"log"
 )
-
+//二分法查找中值
 func binaryseach(iArray[10] int64, key int64, n int64)  (iMid   int64) {
 
 	var iLow int64 = 0
@@ -24,7 +24,7 @@ func binaryseach(iArray[10] int64, key int64, n int64)  (iMid   int64) {
 return -1
 }
 
-
+//最简单的串口交互
 func main() {
 
 		c := &serial.Config{Name: "COM10", Baud: 115200}
