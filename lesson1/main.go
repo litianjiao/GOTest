@@ -14,6 +14,7 @@ type Connecter interface {
 type PhoneConnecter struct {
 	name string
 }
+
 func (pc PhoneConnecter) Name() string {
 	return pc.name
 }
@@ -21,9 +22,9 @@ func (pc PhoneConnecter) Connect() {
 	fmt.Println("Connect:", pc.name)
 }
 func Disconnect(usb USB) {
-	if pc,ok:=usb.(PhoneConnecter);ok{
-	fmt.Println("Disconnect:", pc.name)
-	return
+	if pc, ok := usb.(PhoneConnecter); ok {
+		fmt.Println("Disconnect:", pc.name)
+		return
 	}
 }
 func main() {
@@ -33,6 +34,7 @@ func main() {
 	Disconnect(a)
 
 }
+
 //type NUM int
 //func (i *NUM) Increase(b int) {
 //  *i+=NUM(b)
