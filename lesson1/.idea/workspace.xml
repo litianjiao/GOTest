@@ -52,8 +52,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="325" />
-    <option name="y" value="145" />
+    <option name="x" value="246" />
+    <option name="y" value="136" />
     <option name="width" value="1130" />
     <option name="height" value="903" />
   </component>
@@ -104,7 +104,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.go" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lesson2/HTTPtest1" />
     <property name="DefaultGoTemplateProperty" value="Go Application" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="true" />
@@ -194,7 +194,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="325" y="145" width="1130" height="903" extended-state="0" />
+    <frame x="246" y="136" width="1130" height="903" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -243,7 +243,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="interface" />
+    <MESSAGE value="注释一蛤" />
+    <option name="LAST_COMMIT_MESSAGE" value="注释一蛤" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
