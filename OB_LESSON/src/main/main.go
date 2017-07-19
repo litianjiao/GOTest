@@ -4,26 +4,26 @@ import "fmt"
 
 /*
 ******************************************************************
-  * @brief   get   factorial
+  * @brief   break &continue
   * @param
   * @ret
   * @author    TRoy
-  * @date      2017/7/7 16:36
+  * @date      2017/7/19 23:36
 ******************************************************************
 */
-func sum(n int) uint64 {
-	var s uint64 = 1
-	var sum uint64 = 0
-	for i := 1; i <= n; i++ {
-		s = s * uint64(i)
-		sum += s
-	}
-	return sum
-}
-
+/*GOlang中string类型的编码都是utf-8，可以看到一个英文字符是1字节，一个中文字是3字节*/
 func main() {
-	var n int
-	fmt.Scanf("%d", &n)
-	s := sum(n)
-	fmt.Printf("sum is %d", s)
+	str := "he234 world, 芭娜娜"
+	for index, val := range str {
+		//如果此处有continue的话 那就是部分打印了，当index满足某条件进入continue时，直接到下一次for continue以下的print函数并不执行
+		if index < 2 {
+			continue //  equa  if index<2 go to =>index++ =>range str[3]
+		}
+		if index > 5 {
+			break
+		}
+		//以上的方式制约了打印数据的开头和结尾
+		fmt.Printf("index[%d] val[%c] len[%d]\n", index, val, len([]byte(string(val))))
+	}
+
 }
