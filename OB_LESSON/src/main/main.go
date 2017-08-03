@@ -1,35 +1,15 @@
 package main
 
-import "fmt"
-
-/*
-******************************************************************
-  * @brief      完数
-  * @param
-  * @ret
-  * @author    TRoy
-  * @date      2017/7/20 22:47
-******************************************************************
-*/
-func perfect(n int) bool {
-	var sum int = 0
-	for i := 1; i < n; i++ {
-		if n%i == 0 {
-			sum += i
-		}
-	}
-	return n == sum
-}
-func process(n int) {
-	for i := 1; i < n+1; i++ {
-		if perfect(i) {
-			fmt.Println(i)
-		}
-	}
-}
+import (
+	"fmt"
+	"smog"
+)
 
 func main() {
-	var n int
-	fmt.Scanf("%d", &n)
-	process(n)
+	fmt.Printf("please enter your SN.\n\r ")
+	Device := smog.Loader()
+	smog.Test_Process(&Device)
+
 }
+
+//fmt.Printf("create %s succ\ntype: %s,\nsn: %s,\n", Test_device.Name, Test_device.Type, Test_device.SN)
