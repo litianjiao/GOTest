@@ -7,6 +7,7 @@ import (
 
 func main() {
 	fmt.Printf("please enter your SN.\n\r ")
+	fmt.Println("yes")
 	Device := smog.Loader()
 	smog.Test_Process(&Device)
 
