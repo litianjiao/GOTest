@@ -9,7 +9,7 @@ import "fmt"
   * @ret
   * @author    Troy
   * @date      2017/8/23 22:49
-          j=len(s)-1 for slice[0] is a point
+          j=len(s)-1 for j as index of slice.(下标作用)
 ******************************************************************
 */
 func s_reverse(s []int) {
@@ -40,9 +40,9 @@ func s_equal(x, y []string) bool {
 }
 
 func main() {
-	a := [...]int{0, 1, 2, 3, 4, 5, 6}
-	s := []int{0, 1, 2, 3, 4, 5}
-	s_reverse(a[:]) //use slice for modify source array data
+	a := [...]int{0, 1, 2, 3, 4, 5, 6} //array
+	s := []int{0, 1, 2, 3, 4, 5}       //slice of array a
+	s_reverse(a[:])                    //use slice for modify source array data
 	s_reverse(s[:2])
 	fmt.Println(s)
 	s_reverse(s[2:])
