@@ -79,7 +79,9 @@ func map_test4() {
 //slice of map
 func map_test5() {
 	var a []map[int]int
+	//var v map[int]int
 	a = make([]map[int]int, 6)
+
 	/*WAY 1*/
 	// if a[0] == nil {
 	// 	a[0] = make(map[int]int)
@@ -88,17 +90,17 @@ func map_test5() {
 	// 	a[1] = make(map[int]int)
 	// }
 	/* WAY 2*/
-	// for _, v := range a {
-	// 	if v == nil {
-	// 		v = make(map[int]int)
-	// 	}
-	// }
-	/*WAY 3*/
-	for i := 0; i < len(a); i++ {
+	for i, _ := range a {
 		if a[i] == nil {
 			a[i] = make(map[int]int)
 		}
 	}
+	/*WAY 3*/
+	// for i := 0; i < len(a); i++ {
+	// 	if a[i] == nil {
+	// 		a[i] = make(map[int]int)
+	// 	}
+	// }
 	a[0][4] = 10
 	a[1][5] = 2
 	a[1][3] = 3
