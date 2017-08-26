@@ -1,49 +1,36 @@
 package main
 
 import (
+	utils "../utils"
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 type Comparable interface {
 	// Len is the number of elements in the collection.
-	len() int
-
+	Len() int
 	// Less reports whether the element with
 	// index i should sort before the element with index j.
-	less(i, j int) bool
-
+	Less(i, j int) bool
 	// Swap swaps the elements with indexes i and j.
-	swap(i, j int)
-
-	show(i int) int
+	Swap(i, j int)
 }
+
+//先实现这个排序接口
 type IntSlice []int
 
-func (p IntSlice) sort()              { sort(p) }
-func (p IntSlice) len() int           { return len(p) }
-func (p IntSlice) less(i, j int) bool { return p[i] < p[j] }
-func (p IntSlice) swap(i, j int)      { p[i], p[j] = p[j], p[i] }
-func (p IntSlice) show(i int) int     { return p[i] }
+func (is IntSlice) Len() int           { return len(is) }
+func (is IntSlice) Less(i, j int) bool { return is[i] < is[j] } //升序
+func (is IntSlice) Swap(i, j int)      { is[i], is[j] = is[j], is[i] }
 
 //检查是否有序
 func isSorted(data Comparable) bool {
-	n := data.len()
+	n := data.Len()
 	for i := n - 1; i > 0; i-- {
-		if data.less(i, i-1) {
+		if data.Less(i, i-1) {
 			return false
 		}
 	}
 	return true
-}
-func RandArray(n int) []int {
-	arr := make([]int, n)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i <= n-1; i++ {
-		arr[i] = rand.Intn(n)
-	}
-	return arr
 }
 
 //用引用类型【切片】来操作对应数组
@@ -107,55 +94,63 @@ func insertSort(a []int) {
 	}
 }
 
-//快排
-func quickSort(a Comparable, lo int, hi int) {
-	if lo < hi {
-		i, j := lo, hi
-		pos := a.show((lo + hi) / 2)
-		for i <= j {
-			for a.show(i) < pos {
-				i++
-			}
-			for a.show(j) > pos {
-				j--
-			}
-			if i <= j {
-				a.swap(i, j)
-				i++
-				j--
-			}
-		}
-		if lo < j {
-			quickSort(a, lo, j)
-		}
-		if hi > i {
-			quickSort(a, hi, j)
-		}
+func QuickSort(data Comparable) {
+	n := data.Len()
+	lo, hi := 0, n-1
+	quickSort(data, lo, hi)
+}
 
+//快排
+func quickSort(a Comparable, lo, hi int) {
+	if lo < hi {
+		i, j, pos, last := lo, hi, lo, 0 //0就是使用第一个作为基准值,
+		// last这个变量时为了基准最后一次交换变量时出现在那次
+		for i < j {
+			for i < j && a.Less(pos, j) {
+				j--
+			}
+			if i < j {
+				a.Swap(i, j)
+				i++
+				pos = j
+				last = 1
+			}
+			for 1 < j && a.Less(i, pos) { //比pos大的放在后面出现的坑中
+				i++
+			}
+			if i < j {
+				a.Swap(i, j)
+				j--
+				pos = i
+				last = -1
+			}
+		}
+		if last == 1 {
+			a.Swap(j, pos)
+		} else if last == -1 {
+			a.Swap(i, pos)
+		}
+		quickSort(a, lo, i-1)
+		quickSort(a, i+1, hi)
 	}
 
-}
-func partition(a Comparable, lo, hi int) int {
-	var pos int
-	return pos
-}
-
-func sort(data Comparable) {
-	n := data.len()
-	quickSort(data, 0, n-1)
-	//bubbleSort(data)
 }
 
 func main() {
 	//arr := [...]int{20, 4, 5, 3, 8, 13, 1, 66, 80, 2}
-	arr := []int{3, 7, 9, 8, 38, 93, 12, 222, 45, 93, 23, 84, 65, 2}
-	//arr := RandArray(10)
+	arr := utils.RandArray(20)
+	//arr = []int{3, 7, 9, 8, 38, 93, 12, 222, 45, 93, 23, 84, 65, 2}
+
 	fmt.Println("Initial array is:", arr)
 	fmt.Println("")
 	//bubbleSort(b[:])
 	//selectSort(b[:])
 	//insertSort(b[:])
-	sort(IntSlice(arr[:]))
+	t := new(utils.Stopwatch) //封装的计时间的方法
+	t.Start()
+	QuickSort(IntSlice(arr))
+	t.Stop()
+	fmt.Println(t.RuntimeMs(), "ms")
 	fmt.Println("sorted array is:", arr)
 
 }
