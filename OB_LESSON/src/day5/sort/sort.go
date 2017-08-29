@@ -36,12 +36,12 @@ func isSorted(data Comparable) bool {
 //用引用类型【切片】来操作对应数组
 //冒泡
 //相邻元素比较【互换】
-func bubbleSort(a []int) {
+func bubbleSort(a Comparable) {
 	var swap int
-	for i := 0; i < len(a); i++ {
-		for j := 1; j < len(a)-i; j++ {
-			if a[j] < a[j-1] {
-				a[j], a[j-1] = a[j-1], a[j]
+	for i := 0; i < a.Len(); i++ {
+		for j := 1; j < a.Len()-i; j++ {
+			if a.Less(j, j-1) {
+				a.Swap(j, j-1)
 				swap++
 			}
 		}
@@ -104,7 +104,7 @@ func QuickSort(data Comparable) {
 func quickSort(a Comparable, lo, hi int) {
 	if lo < hi {
 		i, j, pos, last := lo, hi, lo, 0 //0就是使用第一个作为基准值,
-		// last这个变量时为了基准最后一次交换变量时出现在那次
+		// last这个变量时为了记住最后一次交换变量时出现在哪次
 		for i < j {
 			for i < j && a.Less(pos, j) {
 				j--

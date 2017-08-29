@@ -44,7 +44,7 @@ func RandArray(n int) []int {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	for i := 0; i <= n-1; i++ {
-		arr = append(arr, r.Intn(n))
+		arr = append(arr, r.Intn(100))
 	}
 	return arr
 }
