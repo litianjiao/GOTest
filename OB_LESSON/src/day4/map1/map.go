@@ -106,7 +106,3 @@ func map_test5() {
 	a[1][3] = 3
 	fmt.Println(a)
 }
-
-func main() {
-	map_test5()
-}
