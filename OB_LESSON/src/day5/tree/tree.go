@@ -16,9 +16,10 @@ func trans(node *Student) {
 	if node == nil {
 		return
 	}
-	fmt.Println(node)
 
+	fmt.Println(node)
 	trans(node.left)
+
 	trans(node.right)
 }
 
