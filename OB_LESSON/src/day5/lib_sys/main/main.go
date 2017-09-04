@@ -1,7 +1,7 @@
 package main
 
 import (
-	"../model"
+	_ "../model"
 	"fmt"
 )
 
@@ -20,8 +20,10 @@ const (
   * @date      2017/9/4 8:42
 ******************************************************************
 */
-func SysInit() {
+func SysInit() (stu *Student) {
 
+	CreateStu("Xiaoming", "一年级", "1311020111", "男")
+	return
 }
 
 /*
@@ -33,9 +35,8 @@ func SysInit() {
   * @date      2017/9/4 8:59
 ******************************************************************
 */
-func Menu() {
+func (p *User) Menu() {
 	var input int
-
 	fmt.Println()
 	fmt.Println("1.借书功能")
 	fmt.Println("2.学生信息管理")
@@ -44,19 +45,19 @@ func Menu() {
 	fmt.Scanf("%d", &input)
 	switch input {
 	case FUNC_BOOK:
-		model.BookMenu()
+		User.BookMenu()
 	case FUNC_STU:
-		model.StuMenu()
+		User.StuMenu()
 	case FUNC_BOOKLIST:
-		model.BookHandle()
+		User.BookHandle()
 	default:
 
 	}
 }
 
 func main() {
-	SysInit()
+	stu := SysInit()
 	for {
-		Menu()
+		stu.Menu()
 	}
 }

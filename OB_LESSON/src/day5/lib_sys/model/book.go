@@ -1,6 +1,11 @@
 package model
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+
+)
+
 
 const (
 	DEFAULT = iota
@@ -8,6 +13,10 @@ const (
 	BACK
 	SEARCH
 	UP
+)
+
+var (
+	ErrStockNotEnough = errors.New("Stock is not enough")
 )
 
 type Book struct {
@@ -62,12 +71,27 @@ func BookMenu() {
   * @date      2017/9/4 10:12
 ******************************************************************
 */
-func BookHandle() {
-	fmt.Println()
-	fmt.Println("1.录入")
-	fmt.Println("2.书籍查询")
-	fmt.Println("3.书籍借还清单")
-	fmt.Println("4.返回")
+func (s *Student) BookHandle() {
+
+	for {
+		fmt.Println()
+		fmt.Println("1.录入")
+		fmt.Println("2.书籍查询")
+		fmt.Println("3.书籍借还清单")
+		fmt.Println("4.返回")
+		var b_t int
+		fmt.Scanf("%p", &b_t)
+		switch b_t {
+		case 1:
+			CreateBook("TGPL01", 10, "Duonuowan", "2010")
+		case 2:
+			fmt.Println(s.GetBookList())
+		case 3:
+		case 4:
+			return
+		default:
+		}
+	}
 }
 
 func borrowBook() {
@@ -75,7 +99,7 @@ func borrowBook() {
 }
 
 func backBook() {
-   
+
 }
 
 func searchBook() {
@@ -105,8 +129,7 @@ func (b *Book) Borrow(c int) (err error) {
 	return
 }
 
-func (b *Book) Back(c int)(err error)  {
-
+func (b *Book) Back(c int) (err error) {
 
 	return
 }
