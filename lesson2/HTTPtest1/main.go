@@ -118,3 +118,4 @@ func sayBye(w http.ResponseWriter, r *http.Request) {
 	time.Sleep(time.Second)
 	w.Write([]byte("see u my friend!"))
 }
+err.new()

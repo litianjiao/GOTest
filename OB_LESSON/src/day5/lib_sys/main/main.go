@@ -41,6 +41,7 @@ func (p *User) Menu() {
 	fmt.Println("1.借书功能")
 	fmt.Println("2.学生信息管理")
 	fmt.Println("3.书籍管理")
+	fmt.Println("4.返回")
 
 	fmt.Scanf("%d", &input)
 	switch input {
@@ -50,6 +51,8 @@ func (p *User) Menu() {
 		User.StuMenu()
 	case FUNC_BOOKLIST:
 		User.BookHandle()
+	case 4:
+		return
 	default:
 
 	}

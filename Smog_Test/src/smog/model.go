@@ -38,7 +38,7 @@ func Loader() (new_dev Device) {
 		//	fmt.Println("转换前:", sn)
 		sn = strings.Replace(sn, " ", "", -1) //去除空格
 		//	fmt.Println("转换后:", sn)
-		sn1 := []byte(sn)
+		sn1 := []byte(sn) //因为go里面string是utf-8 所以中文需要用rune
 		dev_type = int(sn1[3] - 48)
 		flag = true
 		switch dev_type {

@@ -19,6 +19,15 @@ import (
 	"strings"
 )
 
+/*
+******************************************************************
+  * @brief     find lost children
+  * @param
+  * @ret
+  * @author
+  * @date      2017/8/17 21:40
+******************************************************************
+*/
 func find(p_str *string) (str_lost string, err bool) {
 	var (
 		sum  uint8
@@ -34,10 +43,10 @@ func find(p_str *string) (str_lost string, err bool) {
 		return
 	}
 	//去除杂质后遍历数组
-	for _,v:=range str1{
+	for _, v := range str1 {
 		v -= 48
 		sum += uint8(v)
-	  }
+	}
 	if len == 13 {
 		lost = 55 - sum + 9
 		fmt.Printf("001 %d\n", lost)
