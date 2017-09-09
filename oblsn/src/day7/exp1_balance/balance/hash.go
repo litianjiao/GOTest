@@ -1,0 +1,3 @@
+package balance
+
+type HashBalance 

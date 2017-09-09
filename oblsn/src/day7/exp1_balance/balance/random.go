@@ -7,7 +7,7 @@ import (
 type RandomBalance struct {
 }
 
-func (p *RandomBalance) DoBalance(insts []*Instance, key ...string) (inst *Instance, err error) {
+func (p *RandomBalance) DoBalance(insts []*Instance) (inst *Instance, err error) {
 	if len(insts) == 0 {
 		err = ErrNoInstance
 		return
