@@ -21,12 +21,11 @@ func (p *HashBalance) DoBalance(insts []*Instance, key ...string) (inst *Instanc
 	}
 	lens := len(insts)
 	if lens == 0 {
-		err = fmt.Errorf("No backend instance")
+		err = fmt.Errorf("No backend instance.\n")
 		return
 	}
 	crcTable := crc32.MakeTable(crc32.IEEE)
 	hashVal := crc32.Checksum([]byte(defKey), crcTable)
-	//hashval:=md5.Sum(key[:])
 	index := int(hashVal) % lens
 	inst = insts[index]
 	return
