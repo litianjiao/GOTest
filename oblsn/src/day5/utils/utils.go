@@ -19,8 +19,8 @@ func (s *Stopwatch) Stop() {
 }
 
 //纳秒
-func (s Stopwatch) RuntimeNs() int {
 
+func (s Stopwatch) RuntimeNs() int {
 	return s.stop.Nanosecond() - s.start.Nanosecond()
 }
 

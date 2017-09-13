@@ -104,7 +104,7 @@ func QuickSort(data Comparable) {
 func quickSort(a Comparable, lo, hi int) {
 	if lo < hi {
 		i, j, pos, last := lo, hi, lo, 0 //0就是使用第一个作为基准值,
-		// last这个变量时为了记住最后一次交换变量时出现在哪次
+		// last这个变量作为记录最后一次交换变量的flag
 		for i < j {
 			for i < j && a.Less(pos, j) {
 				j--
@@ -138,7 +138,7 @@ func quickSort(a Comparable, lo, hi int) {
 
 func main() {
 	//arr := [...]int{20, 4, 5, 3, 8, 13, 1, 66, 80, 2}
-	arr := utils.RandArray(20)
+	arr := utils.RandArray(200)
 	//arr = []int{3, 7, 9, 8, 38, 93, 12, 222, 45, 93, 23, 84, 65, 2}
 
 	fmt.Println("Initial array is:", arr)
@@ -150,7 +150,7 @@ func main() {
 	t.Start()
 	QuickSort(IntSlice(arr))
 	t.Stop()
-	fmt.Println(t.RuntimeMs(), "ms")
+	fmt.Println(t.RuntimeUs(), "us")
 	fmt.Println("sorted array is:", arr)
 
 }

@@ -1,4 +1,4 @@
-package exp4_open
+package main
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("./test.log")
+	file, err := os.Open("./nice.log")
 	if err != nil {
 		fmt.Println("open file err:", err)
 		return
@@ -20,5 +20,5 @@ func main() {
 		fmt.Println("read string failed,err:", err)
 		return
 	}
-	fmt.Printf("read str succ,ret:\n", str)
+	fmt.Printf("read str succ,ret: %s \n", str)
 }
